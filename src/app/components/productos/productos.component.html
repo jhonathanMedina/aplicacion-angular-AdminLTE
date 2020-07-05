@@ -1,0 +1,76 @@
+<div class="col-md-4">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Crear Productos</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form #clienteform="ngForm">
+            <div class="box-body">
+                <div class="form-group row">
+                    <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" autocomplete="off" placeholder="Nombre" name="nombre"  minlength="5">    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="apellido" class="col-form-label col-sm-2">Precio</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" autocomplete="off" placeholder="precio">
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer ">
+
+                <button class="btn btn-primary" role="button">Guardar</button> 
+                <!--[disabled] = "!clienteform.form.valid" -->
+                <ng-template #elseBock>
+                    <button class="btn btn-warning" role="button" ></button>
+                </ng-template>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="col-md-8">
+    <div class="box box-primary">
+
+        <div class="box-header">
+            <h3 class="box-title"></h3>
+
+        </div>
+
+        <div class="box-body table-responsive no-padding">
+
+            <div *ngIf="productos?.length == 0" class="alert alert-info">
+                NO HAY REGISTROS EN LA BASE DE DATO!
+            </div>
+            <table class="table table hover" *ngIf="productos?.length>0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cliente of productos">
+                        <td>{{cliente.id}}</td>
+                        <td>{{cliente.nombre}}</td>
+                        <td>{{cliente.precio}}</td>
+                        <!--<td><button type="button" class="btn btn-warning" name="button"
+                            [routerLink] = "['/clientes/form',cliente.id]">
+                           Editar
+                       </button></td>
+                       <td><button type="button" class="btn btn-danger" (click)="delete(cliente)">Eliminar</button></td>-->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

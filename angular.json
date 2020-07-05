@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tienda-angular-AdminLTE"
+    }
+  },
+  "defaultProject": "tienda-angular-AdminLTE",
+  "cli": {
+    "analytics": false
+  }
 }
